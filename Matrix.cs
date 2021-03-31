@@ -1,5 +1,11 @@
+using System.Collections;
+using System.Net;
 using Matrix.Models;
 using Rocket.Core.Plugins;
+using Rocket.Unturned.Chat;
+using Rocket.Unturned.Player;
+using SDG.Unturned;
+using UnityEngine;
 using Logger = Rocket.Core.Logging.Logger;
 
 namespace Matrix
@@ -34,6 +40,40 @@ namespace Matrix
             base.Unload();
             Instance = null;
         }
-        
+
+        public void SendPlayer(Server server, UnturnedPlayer player, bool delay = false)
+        {
+            StartCoroutine(SwitchDelay(server, player, delay));
+        }
+
+        private IEnumerator SwitchDelay(Server server, UnturnedPlayer player, bool delay)
+        {
+            if (delay)
+            {
+                UnturnedChat.Say(player, $"Changing server in {server.Delay}", Color.green);
+            }
+            string serverIP = "";
+            bool isIPV4 = false;
+            
+            if (IPAddress.TryParse(server.ip, out IPAddress Address))
+            {
+                switch (Address.AddressFamily)
+                {
+                    case System.Net.Sockets.AddressFamily.InterNetwork:
+                        serverIP = Address.ToString();
+                        isIPV4 = true;
+                        break;
+                }
+            }
+            if (!isIPV4)
+            {
+                serverIP = Dns.GetHostAddresses(server.ip)[0].ToString();
+            }
+            if (delay)
+            {
+                yield return new WaitForSeconds(server.Delay);
+            }
+            player.Player.sendRelayToServer(Parser.getUInt32FromIP(serverIP), server.port, server.password, false);
+        }
     }
 }

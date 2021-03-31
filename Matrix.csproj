@@ -47,6 +47,10 @@
         <Reference Include="Rocket.Unturned, Version=4.9.3.9, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\lib\Rocket.Unturned.dll</HintPath>
         </Reference>
+        <Reference Include="SteamQueryNet, Version=1.0.0.5, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\packages\SteamQueryNet.1.0.6\lib\netstandard2.0\SteamQueryNet.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
@@ -60,10 +64,14 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Commands\CommandMatrix.cs" />
+        <Compile Include="Commands\CommandServers.cs" />
         <Compile Include="Matrix.cs" />
         <Compile Include="MatrixConfiguration.cs" />
         <Compile Include="Models\Server.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="packages.config" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

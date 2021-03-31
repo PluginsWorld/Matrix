@@ -4,6 +4,9 @@ namespace Matrix.Models
     {
         public string name;
         public string ip;
-        public int port;
+        public ushort port;
+        public string permission;
+        public float Delay;
+        public string password;
     }
 }
