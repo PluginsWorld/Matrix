@@ -19,10 +19,10 @@
 
 ### Installation
 
-Download the plugin from the release tab
-Unzip file
-Drag files in the libraries folder to Server/Rocket/Libraries
-Drag files in the plugins folder to Server/Rocket/Plugins
+Download the plugin from the release tab <br />
+Unzip file <br />
+Drag files in the libraries folder to Server/Rocket/Libraries <br />
+Drag files in the plugins folder to Server/Rocket/Plugins <br />
 
 Start up server and enjoy
 
