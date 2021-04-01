@@ -1,6 +1,6 @@
 # Matrix
 
-![Project Image](project-image-url)
+![Project Image](https://jonnyc.me/assets/img/logo.png)
 
 > Networking Plugin to connect multiple Unturned servers together
 > 
@@ -10,7 +10,7 @@
 
 - [Description](#description)
 - [How To Use](#how-to-use)
-- [License](#license)
+- [License](https://www.gnu.org/licenses/gpl-3.0.en.html)
 - [Support](#support)
 
 ---
