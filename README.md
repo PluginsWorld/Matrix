@@ -17,6 +17,16 @@
 
 ## Description
 
+A plugin to connect multiple servers in Unturned into a network
+
+## How To Use
+
+| Command  | Permission |
+| ------------- | ------------- |
+| matrix <help>  | matrix |
+| server <server name> | matrix.server && matrix.server.serverPermission |
+| servers | matrix.servers |
+
 ### Installation
 
 Download the plugin from the release tab <br />
