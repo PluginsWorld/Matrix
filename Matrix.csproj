@@ -38,6 +38,10 @@
         <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\lib\Assembly-CSharp-firstpass.dll</HintPath>
         </Reference>
+        <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+          <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
         <Reference Include="Rocket.API, Version=4.9.3.4, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\lib\Rocket.API.dll</HintPath>
         </Reference>
@@ -46,10 +50,6 @@
         </Reference>
         <Reference Include="Rocket.Unturned, Version=4.9.3.9, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\lib\Rocket.Unturned.dll</HintPath>
-        </Reference>
-        <Reference Include="SteamQueryNet, Version=1.0.0.5, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\SteamQueryNet.1.0.6\lib\netstandard2.0\SteamQueryNet.dll</HintPath>
-          <Private>True</Private>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
@@ -64,10 +64,12 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Commands\CommandMatrix.cs" />
+        <Compile Include="Commands\CommandServer.cs" />
         <Compile Include="Commands\CommandServers.cs" />
         <Compile Include="Matrix.cs" />
         <Compile Include="MatrixConfiguration.cs" />
         <Compile Include="Models\Server.cs" />
+        <Compile Include="Models\ServerResult.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>

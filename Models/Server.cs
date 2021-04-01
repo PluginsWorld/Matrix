@@ -8,5 +8,6 @@ namespace Matrix.Models
         public string permission;
         public float Delay;
         public string password;
+        public string APIKey;
     }
 }

@@ -3,12 +3,13 @@ using Rocket.API;
 using Rocket.Unturned.Chat;
 using Rocket.Unturned.Player;
 using SDG.Unturned;
+using Logger = Rocket.Core.Logging.Logger;
 
 namespace Matrix.Commands
 {
     public class CommandReload : IRocketCommand
     {
-        public AllowedCaller AllowedCaller => AllowedCaller.Player;
+        public AllowedCaller AllowedCaller => AllowedCaller.Both;
 
         public string Name => "matrix";
 
@@ -32,9 +33,14 @@ namespace Matrix.Commands
             {
                 if (player.HasPermission("matrix.reload"))
                 {
+                    if (AllowedCaller == AllowedCaller.Console)
+                    {
+                        Logger.Log("Reloading Matrix");
+                        Matrix.Instance.ReloadPlugin();
+                        return;
+                    }
                     UnturnedChat.Say(caller, "Matrix >> Reloading Matrix");
-                    Matrix.Instance.Configuration.Unload();
-                    Matrix.Instance.Configuration.Load();
+                    Matrix.Instance.ReloadPlugin();
                     UnturnedChat.Say(caller, "Matrix >> Matrix Reload Complete");
                 }
                 else
