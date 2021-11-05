@@ -1,5 +1,7 @@
 # Matrix
 
+[![CodeFactor](https://www.codefactor.io/repository/github/pluginsworld/matrix/badge)](https://www.codefactor.io/repository/github/pluginsworld/matrix)
+
 ![Project Image](https://jonnyc.me/assets/img/logo.png)
 
 > Networking Plugin to connect multiple Unturned servers together
